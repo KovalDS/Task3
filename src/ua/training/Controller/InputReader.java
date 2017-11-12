@@ -1,31 +1,24 @@
-package ua.training;
+package ua.training.Controller;
+
+import ua.training.Model;
+import ua.training.View;
 
 import java.util.Scanner;
 
-/**
- * Created by Dima on 09.11.2017.
- */
-public class Controller {
-    public static final String REGEX_SURNAME = "^[A-Z][a-z]+$";
-    public static final String REGEX_NAME = "^[A-Z][a-z]+$";
-    public static final String REGEX_NICKNAME = "^[A-Za-z0-9_-]{3,12}$";
-    public static final String REGEX_EMAIL = "^[A-Za-z0-9]+@[a-z]{2,6}.[a-z]{2,5}$";
-    public static final String REGEX_PHONE = "^0[0-9]{9}$";
+import static ua.training.Controller.RegexContainer.*;
 
+public class InputReader {
     private Model model;
     private View view;
-
     private Utilities utilities;
 
-    public Controller(Model model, View view) {
+    InputReader(Model model, View view) {
         this.model = model;
         this.view = view;
-        utilities = new Utilities(model, view);
+        this.utilities = new Utilities(model, view);
     }
 
-    public void processUser() {
-        Scanner sc = new Scanner(System.in);
-
+    void proccessInput(Scanner sc) {
         String input = utilities.getData(sc, REGEX_SURNAME);
         view.printMessage(input);
 
