@@ -22,22 +22,27 @@ public class InputReader {
     void proccessInput(Scanner sc) {
         view.printMessages(INPUT_DATA, SURNAME);
         String input = utilities.getData(sc, REGEX_SURNAME);
-        view.printInput(input, YOUR, SURNAME);
+        model.setSurname(input);
+        view.printInput(model.getSurname(), YOUR, SURNAME);
 
         view.printMessages(INPUT_DATA, NAME);
         input = utilities.getData(sc, REGEX_NAME);
-        view.printInput(input, YOUR, NAME);
+        model.setName(input);
+        view.printInput(model.getName(), YOUR, NAME);
 
         view.printMessages(INPUT_DATA, NICKNAME);
-        input = utilities.getData(sc, REGEX_NICKNAME);
-        view.printInput(input, YOUR, NICKNAME);
+        input = utilities.getUniqueData(sc, REGEX_NICKNAME);
+        model.setNickname(input);
+        view.printInput(model.getNickname(), YOUR, NICKNAME);
 
         view.printMessages(INPUT_DATA, EMAIL);
-        input = utilities.getData(sc, REGEX_EMAIL);
-        view.printInput(input, YOUR, EMAIL);
+        input = utilities.getUniqueData(sc, REGEX_EMAIL);
+        model.setEmail(input);
+        view.printInput(model.getEmail(), YOUR, EMAIL);
 
         view.printMessages(INPUT_DATA, PHONE, PHONE_FORMAT);
         input = utilities.getData(sc, REGEX_PHONE);
-        view.printInput(input, YOUR, PHONE);
+        model.setPhone(input);
+        view.printInput(model.getPhone(), YOUR, PHONE);
     }
 }
