@@ -1,7 +1,7 @@
 package ua.training.Controller;
 
-import ua.training.Model;
-import ua.training.View;
+import ua.training.Model.Model;
+import ua.training.View.View;
 
 import java.util.Scanner;
 

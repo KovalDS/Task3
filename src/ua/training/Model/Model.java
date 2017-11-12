@@ -1,4 +1,4 @@
-package ua.training;
+package ua.training.Model;
 
 /**
  * Created by Dima on 09.11.2017.

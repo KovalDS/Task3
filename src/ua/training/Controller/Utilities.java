@@ -1,7 +1,8 @@
 package ua.training.Controller;
 
-import ua.training.Model;
-import ua.training.View;
+import ua.training.Model.Model;
+import ua.training.View.TextConstants;
+import ua.training.View.View;
 
 import java.util.Scanner;
 
@@ -26,7 +27,7 @@ class Utilities {
     private String readAndCheckInput(Scanner sc, String regex) {
         String input;
         while(!(input = sc.next()).matches(regex)) {
-            view.printMessage(View.WRONG_INPUT);
+            view.printMessage(TextConstants.WRONG_INPUT);
         }
         return input;
     }
