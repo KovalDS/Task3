@@ -8,7 +8,7 @@ import java.util.Scanner;
 import static ua.training.Controller.RegexContainer.*;
 import static ua.training.View.TextConstants.*;
 
-public class InputReader {
+class InputReader {
     private Model model;
     private View view;
     private Utilities utilities;

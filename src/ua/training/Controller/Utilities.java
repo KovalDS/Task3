@@ -34,15 +34,11 @@ class Utilities {
     }
 
     String getData(Scanner sc, String regex) {
-        String input = readAndCheckInput(sc, regex);
-        return input;
+        return readAndCheckInput(sc, regex);
     }
 
     private String readAndCheckUniqueInput(Scanner sc, String regex) throws NotUniqueDataException {
-        String input;
-        while(!(input = sc.next()).matches(regex)) {
-            view.printMessage(WRONG_INPUT);
-        }
+        String input = readAndCheckInput(sc, regex);
         if (model.inputIsUnique(input)) {
             throw new NotUniqueDataException();
         }
