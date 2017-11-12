@@ -28,6 +28,7 @@ class Utilities {
                 input = readAndCheckUniqueInput(sc, regex);
             } catch (NotUniqueDataException e) {
                 view.printMessage(NOT_UNIQUE);
+                e.printStackTrace(); //Remove later
             }
         }
         return input;
@@ -39,8 +40,8 @@ class Utilities {
 
     private String readAndCheckUniqueInput(Scanner sc, String regex) throws NotUniqueDataException {
         String input = readAndCheckInput(sc, regex);
-        if (model.inputIsUnique(input)) {
-            throw new NotUniqueDataException();
+        if (model.inputIsNotUnique(input)) {
+            throw new NotUniqueDataException(EXCEPTION_MESSAGE, input);
         }
         return input;
     }

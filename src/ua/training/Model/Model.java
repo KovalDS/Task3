@@ -10,7 +10,7 @@ public class Model {
     private String email;
     private String phone;
     private String notUniqueLogin = "notUnique";
-    private String getNotUniqueEmail = "notUnique@mail.com";
+    private String NotUniqueEmail = "notUnique@mail.com";
 
     public String getSurname() {
         return surname;
@@ -52,8 +52,8 @@ public class Model {
         this.phone = phone;
     }
 
-    public boolean inputIsUnique(String input) {
-        return input.equals(notUniqueLogin) || input.equals(getNotUniqueEmail);
+    public boolean inputIsNotUnique(String input) {
+        return input.equals(notUniqueLogin) || input.equals(NotUniqueEmail);
     }
 
 }
