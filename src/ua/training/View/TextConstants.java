@@ -13,4 +13,5 @@ public interface TextConstants {
     String YOUR = "input.your";
     String PHONE_FORMAT = "input.phone.format";
     String NOT_UNIQUE = "exception.not.unique";
+    String YOU_ENTERED = "input.not.unique.data";
 }

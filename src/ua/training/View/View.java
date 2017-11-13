@@ -12,10 +12,6 @@ public class View {
             ResourceBundle.getBundle(
                     MESSAGES_BUNDLE_NAME, new Locale("en"));
 
-    public void printMessage(String message) {
-        System.out.println(bundle.getString(message));
-    }
-
     public void printMessages(String... message) {
         for (String v : message) {
             System.out.print(bundle.getString(v) + " ");
@@ -25,5 +21,9 @@ public class View {
     public void printInput(String input, String... message) {
         printMessages(message);
         System.out.println(input);
+    }
+
+    public void printError(String message, String error) {
+        System.out.println(bundle.getString(message) + " " + error);
     }
 }

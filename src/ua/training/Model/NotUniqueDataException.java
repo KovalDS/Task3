@@ -7,4 +7,8 @@ public class NotUniqueDataException extends Exception{
         super(message + notUniqueData);
         this.data = notUniqueData;
     }
+
+    public String getData() {
+        return this.data;
+    }
 }

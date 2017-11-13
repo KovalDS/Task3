@@ -27,7 +27,8 @@ class Utilities {
             try {
                 input = readAndCheckUniqueInput(sc, regex);
             } catch (NotUniqueDataException e) {
-                view.printMessage(NOT_UNIQUE);
+                view.printError(YOU_ENTERED, e.getData());
+                view.printMessages(NOT_UNIQUE);
                 e.printStackTrace(); //Remove later
             }
         }
@@ -49,7 +50,7 @@ class Utilities {
     private String readAndCheckInput(Scanner sc, String regex) {
         String input;
         while(!(input = sc.next()).matches(regex)) {
-            view.printMessage(WRONG_INPUT);
+            view.printMessages(WRONG_INPUT);
         }
         return input;
     }
